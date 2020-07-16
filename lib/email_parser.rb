@@ -1,18 +1,16 @@
 require 'pry'
 class EmailAddressParser
   
-  attr_accessor :emails
+  attr_accessor :parse
   
-  def initialize(emails)
-    @emails = []
+  def initialize(string)
+    @string = string
   end
   
   def parse
-    email_addresses = EmailAddressParser.new
-    emails << email_addresses
-    emails
-    binding.pry
-  end
+    @string.split(/, | /).uniq
+  end 
+  
 end
 
 # Build a class EmailAddressParser that accepts a string of unformatted 
